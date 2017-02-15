@@ -4,7 +4,7 @@
 no *.hbm.xml, simply no XML configuration file is in this example, 
 which retrieves data from database and returns them in JSON format.</p>
 
-<p>This project uses embedded HSQL database, which creates an in-memory ddatabase at startup and 
+<p>This project uses embedded HSQL database, which creates an in-memory database at startup and 
 destroys all data at shutdown.</p>
 
 <p>
