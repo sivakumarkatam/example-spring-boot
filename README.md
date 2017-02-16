@@ -18,6 +18,6 @@ destroys all data at shutdown.</p>
 </ul>
 
 <p>
-	How to build the WAR file:
+	How to build WAR file:
 	<code>mvn package</code>
 </p>
