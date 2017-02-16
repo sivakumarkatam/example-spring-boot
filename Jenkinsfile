@@ -15,6 +15,7 @@ node{
 
         // Run the maven build
         sh "mvn clean install"
+         echo 'Good Bye!'
     }
 }
 
