@@ -12,7 +12,7 @@ public class Customer {
 	private Integer id;
 
 	private String name;
-	private String password="vaibhav";
+	private String password="vaibhavwa";
 
 	public Integer getId() {
 		return id;
