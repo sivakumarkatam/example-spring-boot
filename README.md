@@ -13,7 +13,7 @@ destroys all data on shutdown.</p>
 </p>
 
 <ul>
-<li>List all customers (in JSON format): <code>http://localhost:8080/customers</code></li>
+<li>List all the customers (in JSON format): <code>http://localhost:8080/customers</code></li>
 <li>Customer detail (in JSON format): <code>http://localhost:8080/customers/1</code></li>
 </ul>
 
