@@ -1,4 +1,4 @@
-stage 'Test
+stage 'Test'
 node {
 echo 'Hello Jenkins'
 }
