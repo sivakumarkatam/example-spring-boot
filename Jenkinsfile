@@ -10,23 +10,22 @@ node{
     sh "mvn clean package -Dcommitid=${commitid}"
    
 }
-
 node{
     stage 'Stop, Deploy and Start'
     // shutdown
-    sh 'curl -X POST http://localhost:8090/shutdown || true'
+    sh 'curl -X POST http://localhost:10000/shutdown || true'
     // copy file to target location
     sh 'cp target/*.war /tmp/'
     // start the application
     sh 'nohup java -jar /tmp/*.war &'
     // wait for application to respond
-    sh 'while ! httping -qc1 http://localhost:8090 ; do sleep 1 ; done'
+    sh 'while ! httping -qc1 http://localhost:10000 ; do sleep 1 ; done'
 }
  
 node{
     stage 'Smoketest'
     def workspacePath = pwd()
-    sh "curl --retry-delay 10 --retry 5 http://localhost:8090/info -o ${workspacePath}/info.json"
+    sh "curl --retry-delay 10 --retry 5 http://localhost:10000/info -o ${workspacePath}/info.json"
     if (deploymentOk()){
         return 0
     } else {
