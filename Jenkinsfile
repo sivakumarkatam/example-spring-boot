@@ -21,7 +21,6 @@ node{
     // wait for application to respond
     sh 'sleep 50; httping -qc1 http://ip-10-0-0-48:8090'
 }
- 
 node{
     stage 'Smoketest'
     def workspacePath = pwd()
