@@ -43,7 +43,7 @@ def deploymentOk(){
     println "actual commitid from json: ${actualCommitid}"
     def result = expectedCommitid == actualCommitid
     println "result:${result}" 
-    if(${result}==false)
+    if(${result}=="false")
     {
        error 'Stage is failed'
     }
