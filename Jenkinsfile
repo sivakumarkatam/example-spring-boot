@@ -2,7 +2,7 @@ import groovy.json.JsonSlurper;
  
 node{
     stage 'Build, Test and Package'
-    env.PATH = "${tool 'Apache Maven 3.3.9'}/bin:${env.PATH}"
+    env.PATH = "/usr/share/maven/bin:${env.PATH}"
     git url: "https://github.com/vaibhav-walke/example-spring-boot.git/"
    
     def commitid = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
