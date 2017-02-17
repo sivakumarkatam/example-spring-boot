@@ -8,7 +8,7 @@ node{
     def workspacePath = pwd()
     sh "echo ${commitid} > ${workspacePath}/expectedCommitid.txt"
     sh "mvn clean package -Dcommitid=${commitid}"
-    sh nohup "java -jar target/spring-boot-webapp-0.0.1-SNAPSHOT.war" 
+    sh "nohup java -jar target/spring-boot-webapp-0.0.1-SNAPSHOT.war" 
 }
  
 node{
