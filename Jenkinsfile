@@ -6,6 +6,7 @@ node{
     // workaround, taken from https://github.com/jenkinsci/pipeline-examples/blob/master/pipeline-examples/gitcommit/gitcommit.groovy
     def commitid = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
     def workspacePath = pwd()
+    sh "echo ${workspacePath}"
     sh "echo ${commitid} > ${workspacePath}/expectedCommitid.txt"
     sh "mvn clean package -Dcommitid=${commitid}"
     sh "nohup java -jar target/spring-boot-webapp-0.0.1-SNAPSHOT.war &" 
