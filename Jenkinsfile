@@ -14,6 +14,7 @@ node{
     stage 'Stop, Deploy and Start'
     // shutdown
     sh 'curl -X POST http://ip-10-0-0-48:8090/shutdown || true'
+    sh 'sleep 50'
     // copy file to target location
     sh 'cp target/*.war /tmp/'
     // start the application
