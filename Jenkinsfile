@@ -47,10 +47,8 @@ def deploymentOk(){
     {
        error 'Stage is failed'
     }
-    else
-    {
     return result
-    }
+    
 }
 def readCommitidFromJson() {
     def workspacePath = pwd()
