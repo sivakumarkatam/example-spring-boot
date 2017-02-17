@@ -13,7 +13,12 @@ node{
         // Run the maven build
         sh "mvn clean install"
         sh "mvn package"
-        mvn package
+         def artifactory = Artifactory.server('my.server.id')
+  def mavenBuild = Artifactory.newMavenBuild()
+  mavenBuild.deployer server: artifactory, releaseRepo: 'mystuff-local', snapshotRepo: 'mystuff-snapshots-local'
+  mavenBuild.tool = 'Maven 3.3.9'
+
+  def coreBuildInfo = mavenBuild.run pom: 'cm\\settings.xml', goals: 'clean install', opts: '-Dmaven.repo.local=.repository -Dmaven.test.failure.ignore -B -U -Prelease'
          
     }
     echo 'Hello Jenkins'
