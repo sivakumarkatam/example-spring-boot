@@ -17,7 +17,8 @@ node{
     // copy file to target location
     sh 'cp target/*.war /tmp/'
     // start the application
-    sh 'nohup java -jar /tmp/*.war'
+    //sh 'nohup java -jar /tmp/*.war'
+    sh "jnohup java -jar target/spring-boot-webapp-0.0.1-SNAPSHOT.war &" 
     // wait for application to respond
     sh 'sleep 50; httping -qc1 http://ip-10-0-0-48:8090'
 }
