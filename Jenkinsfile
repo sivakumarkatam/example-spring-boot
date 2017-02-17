@@ -8,10 +8,7 @@ node{
     // Mark the code build
     stage 'Build'
 
-    maven(
-            maven: 'M3',
-            mavenSettingsConfig: 'maven-settings-for-gameoflife',
-            mavenLocalRepo: '.repository') {
+    maven() {
 
         // Run the maven build
         sh "mvn clean install"
