@@ -8,7 +8,7 @@ node{
     // Mark the code build
     stage 'Build'
 
-    withMaven(
+    maven(
             maven: 'M3',
             mavenSettingsConfig: 'maven-settings-for-gameoflife',
             mavenLocalRepo: '.repository') {
