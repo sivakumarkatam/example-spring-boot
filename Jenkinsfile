@@ -41,13 +41,13 @@ def deploymentOk(){
     actualCommitid = readCommitidFromJson()
     println "expected commitid from txt: ${expectedCommitid}"
     println "actual commitid from json: ${actualCommitid}"
-    def result = expectedCommitid == actualCommitid
-    println "result:${result}" 
-    if(${result}=="false")
-    {
-       error 'Stage is failed'
-    }
-    return result
+    return expectedCommitid == actualCommitid
+    //println "result:${result}" 
+    //if(${result}=="false")
+    //{
+      // error 'Stage is failed'
+    //}
+    //return result
     
 }
 def readCommitidFromJson() {
