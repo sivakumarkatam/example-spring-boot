@@ -30,7 +30,7 @@ node{
     stage 'Smoketest'
     def workspacePath = pwd()
     sh 'sleep 30 ; curl -s -o /dev/null -w "%{http_code}" http://ip-10-0-0-48:8090/info -o ${workspacePath}/info.json'
-    if (deploymentOk()){
+    if (deploymentOk()=="true"){
         return 1
     } else {
         return 0
