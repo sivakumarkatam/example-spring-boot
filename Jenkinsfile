@@ -20,7 +20,7 @@ node{
     sh 'cp target/*.war /tmp/'
     // start the application
     sh 'java -jar /tmp/spring-boot-webapp-0.0.1-SNAPSHOT.war &'
-    sh 'sleep 200'
+    sh 'sleep 100'
    // sh "nohup java -jar target/spring-boot-webapp-0.0.1-SNAPSHOT.war &" 
     // wait for application to respond
     //sh 'sleep 50; httping -qc1 http://ip-10-0-0-48:8090 test'
@@ -41,7 +41,9 @@ def deploymentOk(){
     actualCommitid = readCommitidFromJson()
     println "expected commitid from txt: ${expectedCommitid}"
     println "actual commitid from json: ${actualCommitid}"
-    return expectedCommitid == actualCommitid
+    def result = expectedCommitid == actualCommitid
+    println "result:${result}" 
+    return result
 }
 def readCommitidFromJson() {
     def workspacePath = pwd()
