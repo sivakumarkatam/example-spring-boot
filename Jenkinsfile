@@ -9,13 +9,24 @@ node{
     sh "echo ${workspacePath}"
     sh "echo ${commitid} > ${workspacePath}/expectedCommitid.txt"
     sh "mvn clean package -Dcommitid=${commitid}"
-    sh "nohup java -jar target/spring-boot-webapp-0.0.1-SNAPSHOT.war &" 
+
+}
+node{
+    stage 'Stop, Deploy and Start'
+    // shutdown
+    sh 'curl -X POST http://ip-10-0-0-48:8090/shutdown || true'
+    // copy file to target location
+    sh 'cp target/*.war /tmp/'
+    // start the application
+    sh 'nohup java -jar /tmp/*.war &'
+    // wait for application to respond
+    sh 'while ! httping -qc1 http://ip-10-0-0-48:8090 ; do sleep 1 ; done'
 }
  
 node{
     stage 'Smoketest'
     def workspacePath = pwd()
-    sh 'sleep 30 ; curl --retry-delay 10 --retry 5 http://ip-10-0-0-48:8090/info -o info.json'
+    sh 'sleep 10 ; curl --retry-delay 10 --retry 5 http://ip-10-0-0-48:8090/info -o info.json'
     if (deploymentOk()){
         return 0
     } else {
