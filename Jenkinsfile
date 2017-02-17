@@ -13,7 +13,7 @@ node{
 node{
     stage 'Stop, Deploy and Start'
     // shutdown
-    sh 'curl -X POST http://52.73.170.3:8090/shutdown || true'
+    sh 'curl -X POST http://ip-10-0-0-48:8090/shutdown || true'
     // copy file to target location
     sh 'cp target/*.war /tmp/'
     // start the application
@@ -25,7 +25,7 @@ node{
 node{
     stage 'Smoketest'
     def workspacePath = pwd()
-    sh 'sleep 10 ; curl --retry-delay 10 --retry 5 http://52.73.170.3:8090/info -o ${workspacePath}/info.json'
+    sh 'sleep 10 ; curl --retry-delay 10 --retry 5 http://ip-10-0-0-48:8090/info -o ${workspacePath}/info.json'
     if (deploymentOk()){
         return 0
     } else {
