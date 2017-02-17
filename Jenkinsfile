@@ -15,7 +15,7 @@ node{
 node{
     stage 'Smoketest'
     def workspacePath = pwd()
-    sh 'sleep 30 ; curl --retry-delay 10 --retry 5 http://ip-10-0-0-48:8090/info -o ${workspacePath}/info.json'
+    sh 'sleep 30 ; curl --retry-delay 10 --retry 5 http://ip-10-0-0-48:8090/info -o info.json'
     if (deploymentOk()){
         return 0
     } else {
