@@ -20,7 +20,6 @@ node{
     sh 'nohup java -jar /tmp/*.war &'
     // wait for application to respond
     sh 'while ! tcpping -qc1 http://ip-10-0-0-48:8090 ; do sleep 1 ; done'
-
 }
  
 node{
