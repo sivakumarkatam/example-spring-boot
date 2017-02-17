@@ -1,21 +1,9 @@
 import groovy.json.JsonSlurper;
- 
-node{
-    stage 'Build, Test and Package'
-    env.PATH = "/usr/share/maven/bin:${env.PATH}"
-    git url: "https://github.com/vaibhav-walke/example-spring-boot.git/"
-    def commitid = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
-    def workspacePath = pwd()
-    sh "echo ${commitid} > ${workspacePath}/expectedCommitid.txt"
-    sh "mvn clean package -Dcommitid=${commitid}"
-    sh "java -jar target/spring-boot-webapp-0.0.1-SNAPSHOT.war" 
-}
 
- 
 node{
     stage 'Smoketest'
     def workspacePath = pwd()
-    sh "curl --retry-delay 10 --retry 5 http://localhost:10000/info -o ${workspacePath}/info.json"
+    sh "curl --retry-delay 10 --retry 5 http://ip-10-0-0-48:10000/info -o ${workspacePath}/info.json"
     if (deploymentOk()){
         return 0
     } else {
