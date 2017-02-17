@@ -19,7 +19,7 @@ node{
     sh 'cp target/*.war /tmp/'
     // start the application
     sh 'java -jar /tmp/spring-boot-webapp-0.0.1-SNAPSHOT.war &'
-    sh 'sleep 150'
+    sh 'sleep 200'
    // sh "nohup java -jar target/spring-boot-webapp-0.0.1-SNAPSHOT.war &" 
     // wait for application to respond
     //sh 'sleep 50; httping -qc1 http://ip-10-0-0-48:8090 test'
@@ -34,6 +34,7 @@ node{
         return 1
     }
 } 
+
 def deploymentOk(){
     def workspacePath = pwd()
     expectedCommitid = new File("${workspacePath}/expectedCommitid.txt").text.trim()
