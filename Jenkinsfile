@@ -9,7 +9,6 @@ node{
     sh "echo ${workspacePath}"
     sh "echo ${commitid} > ${workspacePath}/expectedCommitid.txt"
     sh "mvn clean package -Dcommitid=${commitid}"
-
 }
 node{
     stage 'Stop, Deploy and Start'
