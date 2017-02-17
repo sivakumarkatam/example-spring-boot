@@ -18,6 +18,8 @@ node{
     sh 'cp target/*.war /tmp/'
     // start the application
     sh 'nohup java -jar /tmp/*.war &'
+    // wait for application to respond
+    sh 'while ! httping -qc1 http://ip-10-0-0-48:8090 ; do sleep 1 ; done'
 
 }
  
