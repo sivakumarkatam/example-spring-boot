@@ -17,15 +17,14 @@ node{
     // copy file to target location
     sh 'cp target/*.war /tmp/'
     // start the application
-    sh 'nohup java -jar /tmp/*.war &'
-    // wait for application to respond
-    sh 'while ! httping -qc1 http://52.73.170.3:8090 ; do sleep 1 ; done'
+    sh 'nohup java -jar /tmp/*.war'
+
 }
  
 node{
     stage 'Smoketest'
     def workspacePath = pwd()
-    sh 'sleep 10 ; curl --retry-delay 10 --retry 5 http://ip-10-0-0-48:8090/info -o ${workspacePath}/info.json'
+    sh 'sleep 30 ; curl --retry-delay 10 --retry 5 http://ip-10-0-0-48:8090/info -o ${workspacePath}/info.json'
     if (deploymentOk()){
         return 0
     } else {
