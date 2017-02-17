@@ -9,7 +9,7 @@
 	<packaging>war</packaging>
 
 	<name>helloboot</name>
-	<description>Hello</description>
+	<description>Hello1234567</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
