@@ -1,8 +1,0 @@
-{
-   "app": {
-      "description": "example project for springboot",
-      "commitid": "@commitid@",
-      "name": "springbootexample",
-      "version": "0.0.1-SNAPSHOT"
-   }
-}
