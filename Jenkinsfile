@@ -23,7 +23,8 @@ node{
     sh 'sleep 100'
    // sh "nohup java -jar target/spring-boot-webapp-0.0.1-SNAPSHOT.war &" 
     // wait for application to respond
-    sh 'sleep 50; httping -qc1 http://ip-10-0-0-48:8090'
+    //sh 'sleep 50; httping -qc1 http://ip-10-0-0-48:8090'
+     sh 'while ! httping -qc1 http://ip-10-0-0-48:8090 ; do sleep 1 ; done'
 }
 node{
     stage 'Smoketest'
