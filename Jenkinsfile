@@ -40,7 +40,6 @@ def deploymentOk(){
     println "actual commitid from json: ${actualCommitid}"
     return expectedCommitid == actualCommitid
 }
- 
 def readCommitidFromJson() {
     def workspacePath = pwd()
     def slurper = new JsonSlurper()
