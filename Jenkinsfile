@@ -17,7 +17,7 @@ node{
     // copy file to target location
     sh 'cp target/*.war /tmp/'
     // start the application
-    sh 'nohup java -jar /tmp/*.war'
+    sh 'nohup java -jar /tmp/*.war &'
 
 }
  
