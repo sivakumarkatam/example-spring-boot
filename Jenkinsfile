@@ -12,6 +12,7 @@ node{
 
         // Run the maven build
         sh "mvn clean install"
+        sh "mvn package"
          echo 'Good Bye!'
     }
 }
