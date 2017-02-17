@@ -13,6 +13,7 @@ public class Customer {
 
 	private String name;
 	private String password="vaibhavwa";
+	private String password2="vaibhavwa2";
 
 	public Integer getId() {
 		return id;
