@@ -49,7 +49,6 @@ def deploymentOk(){
       // error 'Stage is failed'
     //}
     //return result
-    
 }
 def readCommitidFromJson() {
     def workspacePath = pwd()
