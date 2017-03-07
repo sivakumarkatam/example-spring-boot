@@ -1,0 +1,21 @@
+version: 0.0
+os: linux
+files:
+  - source: gs-spring-boot-0.1.0.jar
+    destination: /home/ec2-user
+  - source: appspec.yml
+    destination: /home/ec2-user
+hooks:
+  BeforeInstall:
+    - location: Scripts/BackupAndClean.sh
+      timeout: 120
+      runas: root
+  ApplicationStart:
+    - location: Scripts/StartService.sh
+      timeout: 120
+      runas: root
+  ValidateService:
+    - location: Scripts/MonitorService.sh
+      timeout: 120
+      runas: root
+	  
