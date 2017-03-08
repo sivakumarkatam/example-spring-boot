@@ -5,16 +5,3 @@ files:
     destination: /home/ec2-user
   - source: appspec.yml
     destination: /home/ec2-user
-hooks:
-  BeforeInstall:
-    - location: Scripts/BackupandClean.sh
-      timeout: 120
-      runas: ec2-user
-  ApplicationStart:
-    - location: Scripts/StartService.sh
-      timeout: 120
-      runas: ec2-user
-  ValidateService:
-    - location: Scripts/MonitorService.sh
-      timeout: 120
-      runas: ec2-user
