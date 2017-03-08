@@ -7,7 +7,7 @@ files:
     destination: /home/ec2-user
 hooks:
   BeforeInstall:
-    - location: example-spring-boot/Scripts/BackupandClean.sh
+    - location: codedeploy/example-spring-boot/Scripts/BackupandClean.sh
       timeout: 120
       runas: root
   ApplicationStart:
