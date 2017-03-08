@@ -7,14 +7,14 @@ files:
     destination: /home/ec2-user
 hooks:
   BeforeInstall:
-    - location: example-spring-boot/Scripts/BackupandClean.sh
+    - location: Scripts/BackupandClean.sh
       timeout: 120
       runas: root
   ApplicationStart:
-    - location: example-spring-boot/Scripts/StartService.sh
+    - location: Scripts/StartService.sh
       timeout: 120
       runas: root
   ValidateService:
-    - location: example-spring-boot/Scripts/MonitorService.sh
+    - location: Scripts/MonitorService.sh
       timeout: 120
       runas: root
