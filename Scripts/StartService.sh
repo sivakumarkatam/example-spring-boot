@@ -1,1 +1,1 @@
-sudo systemctl start myapp.service
+sudo service start myapp.service
