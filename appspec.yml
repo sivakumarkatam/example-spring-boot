@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: gs-spring-boot-0.1.0.jar
+  - source: spring-boot-webapp-0.0.1-SNAPSHOT.war
     destination: /home/ec2-user
   - source: appspec.yml
     destination: /home/ec2-user
