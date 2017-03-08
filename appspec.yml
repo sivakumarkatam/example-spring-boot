@@ -9,12 +9,12 @@ hooks:
   BeforeInstall:
     - location: Scripts/BackupandClean.sh
       timeout: 120
-      runas: root
+      runas: ec2-user
   ApplicationStart:
     - location: Scripts/StartService.sh
       timeout: 120
-      runas: root
+      runas: ec2-user
   ValidateService:
     - location: Scripts/MonitorService.sh
       timeout: 120
-      runas: root
+      runas: ec2-user
