@@ -7,6 +7,6 @@ fi
 cd /home/ec2-user/backup/
 mkdir "$(date '+%A-%d''-''%b-%Y')"
 cd "$(date '+%A-%d''-''%b-%Y')"
-mv /home/ec2-user/gs-spring-boot-0.1.0.jar .
-rm -rf /home/ec2-user/gs-spring-boot-0.1.0.jar
+mv /home/ec2-user/spring-boot-webapp-0.0.1-SNAPSHOT.war .
+rm -rf /home/ec2-user/spring-boot-webapp-0.0.1-SNAPSHOT.war
 rm -rf /home/ec2-user/appspec.yml
