@@ -8,4 +8,4 @@ files:
   ApplicationStart:
     - location: Startapp.sh
       timeout: 120
-      runas: root
+      runas: ec2-user
