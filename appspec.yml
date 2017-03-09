@@ -5,7 +5,9 @@ files:
     destination: /home/ec2-user
   - source: appspec.yml
     destination: /home/ec2-user
-    ApplicationStart:
+ 
+hooks:
+   ApplicationStart:
     - location: Startapp.sh
       timeout: 120
       runas: ec2-user
