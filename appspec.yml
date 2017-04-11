@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: spring-boot-webapp-0.0.1-SNAPSHOT.war
-    destination: /home/ec2-user
+    destination: /home/ubuntu
   - source: appspec.yml
-    destination: /home/ec2-user
+    destination: /home/ubuntu
 hooks:
   ApplicationStart:
     - location: StartService.sh
