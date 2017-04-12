@@ -2,11 +2,21 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu
+    destination: /tmp/
 hooks:
+  BeforeInstall:
+    - location: scripts/installOracleJDK8.bash
+      timeout: 300
+      runas: ubuntu
+  AfterInstall:
+    - location: scripts/serviceApp.bash
+      runas: ubuntu
   ApplicationStart:
-    - location: StartService.sh
-      runas: root
-  ApplicationStop:
+    - location: scripts/startApp.bash
+      runas: ubuntu
+      ApplicationStop:
     - location: scripts/stopApp.bash
       runas: root
+  ValidateService:
+    - location: scripts/verifyApp.bash
+      runas: ubuntu
