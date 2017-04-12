@@ -9,4 +9,4 @@ hooks:
   ApplicationStart:
     - location: StartService.sh
       timeout: 120
-      runas: ubuntu
+      runas: root
