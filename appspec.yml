@@ -5,8 +5,8 @@ files:
     destination: /tmp/
 hooks:
   ApplicationStart:
-    - location: scripts/startApp.bash
-      runas: ubuntu
+    - location: StartService.sh
+      runas: root
   ApplicationStop:
     - location: scripts/stopApp.bash
       runas: root
