@@ -1,1 +1,1 @@
-sudo service start myapp.service
+sudo service myapp.service start
