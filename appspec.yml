@@ -16,7 +16,7 @@ hooks:
       runas: ubuntu
       ApplicationStop:
     - location: Scripts/stopApp.bash
-      runas: root
+      runas: ubuntu
   ValidateService:
     - location: Scripts/verifyApp.bash
       runas: ubuntu
