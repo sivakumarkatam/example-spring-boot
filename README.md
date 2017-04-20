@@ -1,5 +1,4 @@
 <h1>Spring Web MVC (+ Hibernate, Spring Data JPA) hello world without any XML file using Spring Boot</h1>
-updated
 <p>No web.xml, no Spring xml configuration file, no persistence.xml, 
 no *.hbm.xml, simply no XML configuration file is  in this example, 
 which retrieves data from database and returns them in JSON format.</p>
