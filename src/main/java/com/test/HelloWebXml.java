@@ -3,7 +3,7 @@ package com.test;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 
-public class HelloWebXml extends SpringBootServletInitializer 
+public class HelloWebXml extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(
@@ -12,4 +12,3 @@ public class HelloWebXml extends SpringBootServletInitializer
 	}
 
 }
-
