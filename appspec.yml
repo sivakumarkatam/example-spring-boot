@@ -10,13 +10,13 @@ hooks:
       runas: ubuntu
   AfterInstall:
     - location: Scripts/serviceApp.bash
-      runas: ubuntu
+      runas: root
   ApplicationStart:
     - location: Scripts/startApp.bash
-      runas: ubuntu
+      runas: root
       ApplicationStop:
     - location: Scripts/stopApp.bash
-      runas: ubuntu
+      runas: root
   ValidateService:
     - location: Scripts/verifyApp.bash
-      runas: ubuntu
+      runas: root
