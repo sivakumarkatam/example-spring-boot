@@ -4,8 +4,8 @@ phases:
     commands:
       - mvn package
   post_build:
-	  commands:
-	    - zip -r myapp.zip target/*
+    commands:
+      - zip -r myapp.zip target/*
 artifacts:
   files:
     - target/
