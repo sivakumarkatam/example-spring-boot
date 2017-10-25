@@ -8,4 +8,4 @@ phases:
       - zip -r myapp.zip target/*
 artifacts:
   files:
-    - target/
+    - target/*
