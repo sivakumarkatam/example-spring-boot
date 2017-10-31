@@ -5,7 +5,7 @@ phases:
       - mvn package
   post_build:
     commands:
-      - zip -r myapp.zip target/*
+      echo "success"
 artifacts:
   files:
     - target/*
