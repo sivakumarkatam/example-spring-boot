@@ -74,6 +74,17 @@
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>9.1.2.v20140210</version>
 			</plugin>
+			<plugin>
+        			<groupId>org.apache.maven.plugins</groupId>
+        			<artifactId>maven-pmd-plugin</artifactId>
+       				 <version>3.8</version>
+        		<configuration>
+          			<linkXref>true</linkXref>
+          			<sourceEncoding>utf-8</sourceEncoding>
+          			<minimumTokens>100</minimumTokens>
+          			<targetJdk>1.5</targetJdk>
+          	        </configuration>
+      			</plugin>
 		</plugins>
 	</build>
 
